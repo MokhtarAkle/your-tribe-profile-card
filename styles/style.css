@@ -17,8 +17,13 @@ body {
   position: relative;
 }
 
+span{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  position: relative;
+}
 article:nth-of-type(1) {
-  width:50vw;
   height: 75vh;
   max-width: 25em;
   min-width:20em;
@@ -30,18 +35,23 @@ article:nth-of-type(1) {
   background-size: cover;
   box-shadow:0 0 20px 20px rgba(0,0,0,.1);
   border-radius:1rem;
-  position: relative;
   transition:.25s;
   z-index: 3;
-  transform: rotate(-15deg);
-  animation: rotation 0.5s linear 0s normal;
+
+}
+
+.frontTransformation{
+  animation-name: rotation;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 
 }
 article:nth-of-type(2) {
-  width:50vw;
   height: 75vh;
   max-width: 25em;
-  min-width:20em;
+  min-width: 20em;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -51,14 +61,19 @@ article:nth-of-type(2) {
   box-shadow:0 0 20px 20px rgba(0,0,0,.1);
   border-radius:1rem;
   z-index: 2;
-  animation: flip 0.5s linear 0s normal;
   position: absolute;
-  left: 35%;
-  transform: rotate(-5deg);
-  
+  right: -10%;
 }
+
+.middleTransformation{
+  animation-name: flip;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
 article:nth-of-type(3) {
-  width:50vw;
   height: 75vh;
   max-width: 25em;
   min-width:20em;
@@ -68,15 +83,20 @@ article:nth-of-type(3) {
   background-image: url(../assets/stock-background.jpg);
   background-position: center;
   background-size: cover;
-  box-shadow:0 0 20px 20px rgba(0,0,0,.1);
+  box-shadow:0 0 20px 20px rgba(0,0,0,.1) inset;
   border-radius:1rem;
-  position: relative;
   transition:.25s;
   z-index: 1;
   position: absolute;
-  left: 45%;
-  transform: rotate(5deg);
-  
+  right: -18%;
+}
+
+.rightTransformation{
+  animation-name: rotater;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 
 header {
@@ -192,12 +212,9 @@ article > p {
 
 @keyframes flip {
   from{
-    translate: rotate(0deg);
-    left: 0;
   }
   to{
-    translate: rotate(-5deg);
-    left: 35%;
+    transform: translateY(-2em);
   }
   
 }
@@ -205,8 +222,18 @@ article > p {
 @keyframes rotation {
   from{
     transform: rotate(0);
+
   }
   to{
-    transform: rotate(-15deg);
+    transform: rotate(-15deg) translateX(-2em);
+  }
+}
+
+@keyframes rotater {
+  from{
+
+  }
+  to{
+    transform: rotate(15deg) translateX(2em) translateY(-3em);
   }
 }
