@@ -30,7 +30,7 @@ article:nth-of-type(1) {
   display:flex;
   flex-direction:column;
   align-items:center;
-  background-image: url(../assets/stock-background.jpg);
+  background-image: url(../assets/stock-background.jpg); /* Photo by Philippe Donn: https://www.pexels.com/photo/stars-1257860/ */
   background-position: center;
   background-size: cover;
   box-shadow:0 0 20px 20px rgba(0,0,0,.1);
@@ -68,7 +68,8 @@ article:nth-of-type(2) {
   background-image: url(../assets/stock-background.jpg);
   background-position: center;
   background-size: cover;
-  box-shadow:0 0 20px 20px rgba(0,0,0,.1);
+  box-shadow:-10px 0 20px 20px rgba(97, 97, 97, 0.555) inset;
+
   border-radius:1rem;
   z-index: 2;
   position: absolute;
@@ -101,7 +102,7 @@ article:nth-of-type(3) {
   background-image: url(../assets/stock-background.jpg);
   background-position: center;
   background-size: cover;
-  box-shadow:0 0 20px 20px rgba(0,0,0,.1) inset;
+  box-shadow:-10px 0 20px 20px rgba(77, 76, 76, 0.658) inset;
   border-radius:1rem;
   transition:.25s;
   z-index: 1;
@@ -136,7 +137,8 @@ header {
 h1 {
   margin:2rem 0 1rem;
   color: rgba(0,239,255,1);
-  
+  font-size: 2.5em;
+  font-style: italic;
 
 }
 
@@ -148,25 +150,32 @@ button {
   width:2.5rem;
   height:2.5rem;
   transform: scale(4);
-  background: rgba(0,239,255,1);
+  background: none;
   border-radius:50%;
   padding:.25rem;
   transition:.25s;
 }
-button:focus {
-  outline:none;
-  background:#202592;
-}
-button:focus svg {
-  stroke: rgba(0,239,255,1);
+button:hover svg{
+  transform: rotate(-180deg);
+  transition: .5s;
 }
 
 svg {
-  stroke: #4e54c8;
+  fill: rgba(128, 116, 128, 0.671);
   position: absolute;
-  top:calc(1.25rem - 12px);
-  left:calc(1.25rem - 12px);
+  opacity: 0;
+  top: 18%;
+  left: 18%;
+  width: 2em;
   transition-delay: .25s;
+  animation-name: buttonAppear, buttonGlow;
+  animation-duration: 4s, 4s;
+  animation-delay: 1.5s, 5.5s;
+  animation-iteration-count: 1, infinite;
+  animation-direction: normal, alternate;
+  animation-timing-function: ease-in, ease-in-out;
+  animation-fill-mode: forwards;
+  
 }
 button svg:nth-of-type(2) {
   opacity:0;
@@ -318,3 +327,30 @@ article > p {
   }
   
 }
+
+@keyframes buttonAppear{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 100%;
+  }
+}
+
+@keyframes buttonGlow {
+  0%{
+    filter: drop-shadow(0px 0px 10px   rgba(255, 255, 255, 0))
+    drop-shadow(0px 0px 20px rgb(255 0 255 / 0))
+    drop-shadow(0px 0px 30px  rgb(0 255 255 / 0));
+  }
+  50%{
+    filter: drop-shadow(0px 0px 10px   rgb(255 255 255 / 1))
+    drop-shadow(0px 0px 20px rgb(255 0 255 / 1))
+    drop-shadow(0px 0px 30px  rgb(0 255 255 / 1));
+  }
+  100%{
+    filter: drop-shadow(0px 0px 10px rgb(255 255 255 / 0))
+    drop-shadow(0px 0px 20px rgb(255 0 255 / 0))
+    drop-shadow(0px 0px 30px  rgb(0 255 255 / 0));
+  }
+} 
