@@ -23,6 +23,30 @@ span{
   justify-content: center;
   position: relative;
 }
+
+header {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  justify-content:flex-end;
+  
+}
+
+h1 {
+  margin:2rem 0 1rem;
+  color: rgba(0,239,255,1);
+  font-size: 2.5em;
+  font-style: italic;
+
+}
+
+header > p { 
+  margin:0;
+  color: white;
+  padding:0 4em 0 4em;
+}
+
 article:nth-of-type(1) {
   height: 75vh;
   max-width: 25em;
@@ -39,6 +63,24 @@ article:nth-of-type(1) {
   z-index: 3;
 
 }
+
+/* .backSide {
+  height: 75vh;
+  max-width: 25em;
+  min-width:20em;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  background-image: url(../assets/stock-background.jpg); */ /* Photo by Philippe Donn: https://www.pexels.com/photo/stars-1257860/ */
+/*   background-position: center;
+  background-size: cover;
+  box-shadow:0 0 20px 20px rgba(0,0,0,.1);
+  border-radius:1rem;
+  transition:.25s;
+  z-index: 3;
+  filter: brightness(100%);
+
+} */
 
 .frontTransformation{
   animation-name: rotation;
@@ -125,22 +167,7 @@ article:nth-of-type(3) {
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
 }
-header {
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  justify-content:flex-end;
-  
-}
 
-h1 {
-  margin:2rem 0 1rem;
-  color: rgba(0,239,255,1);
-  font-size: 2.5em;
-  font-style: italic;
-
-}
 
 button {
   border:none;
@@ -205,20 +232,6 @@ button svg:nth-of-type(2) {
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
-}
-
-p { 
-  margin:0;
-  color: white;
-}
-
-article > p {
-  padding:3rem 2rem;
-  margin-top: 0;
- 
-  text-align:center;
-  border-radius: 0 0 1rem 1rem;
-  width:100%;
 }
 
 @keyframes rotation {

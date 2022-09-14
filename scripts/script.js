@@ -53,6 +53,7 @@ function testFlip(){
     frontAnimation.classList.remove("frontTransformationFlipB");
     frontAnimation.classList.remove("check");
     frontAnimation.classList.toggle("frontTransformationFlip")
+    setTimeout(testFlipChange, 2000);
   }
   else{
     frontAnimation.classList.toggle("frontTransformationFlip");
@@ -62,6 +63,9 @@ function testFlip(){
   }
 }
 
+function testFlipChange(){
+  frontAnimation.classList.add("backSide");
+}
 showButton.addEventListener("click", testExpand);
 flipButton.addEventListener("click", testFlip);
 
