@@ -3,3 +3,5 @@
 
 # Uitleg:
 Het huidige ontwerp is gebaseerd op de theorie van visuele hiërarchie. Er wordt gebruik gemaakt van verschillende factoren om de gebruiker's aandacht te sturen. Het huidige design weerhoudt veel informatie maar maakt een gebruiker hopelijk een beetje nieuwsgierig om verder te drukken.
+
+Link: https://mokhtarakle.github.io/your-tribe-profile-card/
